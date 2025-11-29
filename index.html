@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 検索に出さない設定 -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Thank You Card for 龍矢さん</title>
+
+  <style>
+    :root {
+      --bg-start: #87a8c3;
+      --bg-end:   #a8c5dc;
+      --accent-orange: #ff6b35;
+      --accent-green:  #4ecdc4;
+      --text-main:     #34495e;
+      --text-name:     #16324f;
+      --text-sign:     #ff6b9d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+                   'Noto Sans JP', 'Yu Gothic', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 背景の淡い円（左下・右上） */
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .bg-circle.left {
+      width: 260px;
+      height: 260px;
+      left: -60px;
+      bottom: -40px;
+    }
+
+    .bg-circle.right {
+      width: 320px;
+      height: 320px;
+      right: -80px;
+      top: -60px;
+    }
+
+    .card-container {
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      padding: 64px 96px;
+      width: min(80vw, 900px);   /* PCでは横長カード */
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .thank-you-text {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin: 0 0 12px 0;
+      background: linear-gradient(45deg, #ff8354, #ffb38a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .decorative-line {
+      width: 80px;
+      height: 4px;
+      background: var(--accent-green);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    .recipient-name {
+      font-size: clamp(22px, 2.4vw, 26px);
+      color: var(--text-name);
+      font-weight: 700;
+      margin: 18px 0 0 0;
+    }
+
+    .card-body {
+      text-align: center;
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    .lead {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 24px 0 18px;
+    }
+
+    .body-text {
+      font-size: 15px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .signature {
+      margin-top: 28px;
+      text-align: right;
+      font-size: 16px;
+      color: var(--text-sign);
+      font-weight: 600;
+    }
+
+    .corner-accent {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+    }
+
+    .corner-accent.top-left {
+      top: 20px;
+      left: 26px;
+      border-top: 3px solid var(--accent-orange);
+      border-left: 3px solid var(--accent-orange);
+      border-radius: 16px 0 0 0;
+    }
+
+    .corner-accent.bottom-right {
+      bottom: 20px;
+      right: 26px;
+      border-bottom: 3px solid var(--accent-green);
+      border-right: 3px solid var(--accent-green);
+      border-radius: 0 0 16px 0;
+    }
+
+    /* スマホ用調整：カードを正方形にする */
+    @media (max-width: 768px) {
+      .card-container {
+        width: 80vw;           /* 画面幅の80% */
+        aspect-ratio: 1 / 1;   /* 正方形に固定 */
+        padding: 28px 22px;    /* 中身の余白を少しコンパクトに */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .corner-accent {
+        width: 54px;
+        height: 54px;
+      }
+
+      .corner-accent.top-left {
+        top: 16px;
+        left: 18px;
+      }
+
+      .corner-accent.bottom-right {
+        bottom: 16px;
+        right: 18px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .body-text {
+        font-size: 14px;
+        max-width: 100%;
+      }
+
+      .signature {
+        font-size: 14px;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 背景の円 -->
+  <div class="bg-circle left"></div>
+  <div class="bg-circle right"></div>
+
+  <!-- カード本体 -->
+  <div class="card-container">
+    <div class="corner-accent top-left"></div>
+    <div class="corner-accent bottom-right"></div>
+
+    <header class="card-header">
+      <h1 class="thank-you-text">THANK YOU</h1>
+      <div class="decorative-line"></div>
+      <h2 class="recipient-name">龍矢さん</h2>
+    </header>
+
+    <main class="card-body">
+      <p class="lead">いつもありがとうございます</p>
+      <p class="body-text">
+        龍矢さんのおかげで<br>
+        お店にも早く馴染むことができ<br>
+        とても感謝してます！
+      </p>
+      <div class="signature">まっつーより</div>
+    </main>
+  </div>
+</body>
+</html>
